@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: simple-nginx
+  name: simple-nginx
+spec:
+  ports:
+  - nodePort: 31000
+    port: 80
+  selector:
+    run: simple-nginx
+  type: NodePort

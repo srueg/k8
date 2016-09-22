@@ -1,0 +1,20 @@
+# An Ingress with TLS termination
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: auto-secure-echo
+  annotations:
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+  - hosts:
+    - secure.com
+    secretName: auto-secure-secret
+  rules:
+  - host: secure.com
+    http:
+      paths:
+      - backend:
+          serviceName: echoheaders-x
+          servicePort: 80
+  

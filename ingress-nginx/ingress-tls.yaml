@@ -1,0 +1,18 @@
+# An Ingress with TLS termination
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: secure-echo
+spec:
+  tls:
+  - hosts:
+    - secure.com
+    secretName: foo-secret
+  rules:
+  - host: secure.com
+    http:
+      paths:
+      - backend:
+          serviceName: echoheaders-x
+          servicePort: 80
+  
