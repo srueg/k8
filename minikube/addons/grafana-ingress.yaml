@@ -1,0 +1,15 @@
+# An Ingress for the grafana dashboard
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-dashboard
+  namespace: kube-system
+spec:
+  rules:
+  - host: grafana.mini.dev
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: monitoring-grafana
+          servicePort: 80
