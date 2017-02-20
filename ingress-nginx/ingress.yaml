@@ -5,14 +5,14 @@ metadata:
   name: echomap
 spec:
   rules:
-  - host: foo.bar.com
+  - host: foo.mini.dev
     http:
       paths:
       - path: /foo
         backend:
           serviceName: echoheaders-x
           servicePort: 80
-  - host: bar.baz.com
+  - host: bar.mini.dev
     http:
       paths:
       - path: /bar
