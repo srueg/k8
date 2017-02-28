@@ -1,0 +1,9 @@
+FROM microsoft/aspnetcore:1.1.0
+
+WORKDIR /asp-sample
+
+COPY publish/web .
+
+EXPOSE 8080/tcp
+ENV ASPNETCORE_URLS http://*:8080
+ENTRYPOINT ["dotnet", "asp-sample.dll"]

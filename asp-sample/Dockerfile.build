@@ -1,0 +1,6 @@
+FROM microsoft/aspnetcore-build:1.1.0-projectjson
+
+WORKDIR /asp-sample
+EXPOSE 8080
+ENV ASPNETCORE_URLS http://*:8080
+VOLUME /asp-sample
