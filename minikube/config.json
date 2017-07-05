@@ -3,6 +3,6 @@
     "WantUpdateNotification": true,
     "heapster": true,
     "ingress": true,
-    "kubernetes-version": "v1.6.0-alpha.0",
+    "kubernetes-version": "v1.7.0",
     "vm-driver": "xhyve"
 }
